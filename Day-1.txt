@@ -1,0 +1,105 @@
+//todo Calculate the difference between two integers.
+let userInput=['5 9']
+let n=userInput[0].split(' ').map(Number).sort((a,b)=>b-a)
+function diffrence(num1,num2){
+    return num1-num2
+}
+console.log(diffrence(n[0],n[1]))
+
+//2. todo Check if a number is even or odd.
+let userInput=['2 3 4 5 6 7 8 9']
+let n=userInput[0].split(' ').map(Number)
+function oddOrEven(){
+    for(let i=0;i<n.length;i++){
+        
+        if(n[i]%2==0){
+           console.log(n[i])
+           
+        }
+    }
+}
+
+oddOrEven()
+
+//3. todo Calculate the perimeter of a rectangle.
+let userInput=['3 2']
+let n=userInput[0].split(' ').map(Number)
+// console.log(n)
+function Perimeter(num1,num2){
+    return 2*(num1+num2)
+}
+console.log(Perimeter(n[0],n[1]))
+
+//4.todo Find the largest of four numbers.
+let userInput=['3 2 5 7']
+let n=userInput[0].split(' ').map(Number)
+function largest(n){
+    console.log(Math.max(...n))
+}
+largest(n)
+
+//5. todo Calculate the average of three numbers.
+let userInput=['3 2 5']
+let n=userInput[0].split(' ').map(Number)
+function average(num1,num2,num3){
+   return (num1+num2+num3)/3
+}
+console.log(average(n[0],n[1],n[2]).toFixed(2))
+
+//6. todo Count the number of vowels in a string.
+let userInput='keerthana'
+let n=userInput.split('')
+console.log(n)
+
+
+function isVowel(char) {
+  return "aeiouAEIOU".includes(char);
+}
+let count=0
+for(let i=0;i<n.length;i++){
+console.log(isVowel(n[i]))
+    if (isVowel(n[i])==true){
+        count++
+    }
+}
+console.log(count)
+
+//7. todo Determine if a character is uppercase.
+let userInput='KeerthAna'
+let n=userInput.split('')
+console.log(n)
+
+function isUpperCase(char){
+    return char==char.toUpperCase()
+}
+
+for(let i=0;i<n.length;i++){
+console.log(isUpperCase(n[i]))
+}
+
+//8. todo Determine if a character is uppercase.
+let userInput='KeerthAna'
+let n=userInput.split('')
+console.log(n)
+
+function isReverse(char){
+    return char.reverse()
+}
+console.log(isReverse(n).join(''))
+
+//9. todo Find the square of a number.
+let userInput=['30']
+let n=userInput[0].split(" ").map(Number)
+console.log(n)
+
+function squre(char){
+    return char**2
+}
+console.log(squre(n))
+
+
+
+
+
+
+
