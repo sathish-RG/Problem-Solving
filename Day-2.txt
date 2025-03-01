@@ -1,0 +1,92 @@
+// todo Find the LCM of two numbers.
+let userInput=['2 4']
+let n=userInput[0].split(' ').map(Number)
+console.log(n)
+
+function gcd(a,b){
+    return b===0 ? a : gcd(b, a%b)
+}
+function lcm(a,b){
+    return Math.abs(a*b)/gcd(a,b)
+}
+console.log(gcd(n[0],n[1]))
+console.log(lcm(n[0],n[1]))
+
+// todo Find the LCM of two numbers.
+let userInput=['2 4']
+let n=userInput[0].split(' ').map(Number)
+console.log(n)
+
+function gcd(a,b){
+    return b == 0 ? a : gcd(b,a%b)
+}
+
+console.log(gcd(n[0],n[1]))
+
+
+// todo Generate a pyramid pattern of numbers.
+
+let n=5
+
+for (let i=1;i<=n;i++){
+    let spase=" ".repeat(n-i)
+    let stars=" *".repeat(i)
+ console.log(spase+stars)
+}
+
+// todo Generate a hollowSqure pattern of numbers.
+let n=5
+function hollowSqure(n){
+    for(let i=1;i<=n;i++){
+       let row="  "
+        for(let j=1;j<=n;j++){
+            if(i===1 || i===n || j===1 || j===n){
+             row+=" * " 
+            }else{
+                row+="   "
+            }
+           
+        }
+        console.log(row)
+    }
+}
+hollowSqure(n)
+
+// todo Print an inverted triangle pattern of stars.
+
+let n=5
+function invertedTriangle(n){
+    for(let i=n;i>=1;i--){
+   let space=" ".repeat(n-i)
+   let star="* ".repeat(i)
+   console.log(space+star.trim())
+    }
+}
+invertedTriangle(n)
+
+// todo Check if a number is a palindrome.
+
+let userInput=['121']
+let n=userInput[0].split('').reverse().join('')
+console.log(n)
+if(userInput===n){
+    console.log(true)
+}else {
+    console.log(false)
+}
+
+//todo Check if two numbers are coprime.
+let userInput=['5 9']
+let n=userInput[0].split(' ').map(Number)
+// console.log(n)
+
+function gcd(a,b){
+    return b==0 ? a : gcd(b,a%b)
+}
+console.log(gcd(n[0],n[1]))
+if (gcd(n[0],n[1])===1){
+    console.log(true)
+}else{
+    console.log(false)
+}
+
