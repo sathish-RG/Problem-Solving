@@ -1,0 +1,119 @@
+// todo Find the frequency of each character in a string.
+let userInput="hellow"
+let n=userInput.split('')
+console.log(n)
+let freq={}
+for (let char of n ){
+    if(freq[char]){
+        freq[char] += 1
+    }else{
+        freq[char] =1
+    }
+}
+for (let key in freq){
+    console.log(`${key} → ${freq[key]}`)
+}
+
+// todo Find the frequency of each character in a string.
+let userInput="hello world"
+let n=userInput
+// console.log(n)
+function replace(n){
+    return n.replaceAll(" ","20%")
+}
+console.log(replace(n))
+
+// todo Check if a string is an anagram and panagram of another.
+let userInput=['race','care']
+let m=userInput[0].split('').sort().join('')
+console.log(m)
+let n=userInput[1].split('').sort().join('')
+console.log(n)
+if(m==n){
+    console.log("It is anagram")
+}else{
+    console.log("it is panagram")
+}
+
+// todo Check if a string is an anagram and panagram of another.
+let userInput=['The quick brown fox jumps over the lazy dog']
+let letters = new Set(userInput[0].toLowerCase().replace(/[^a-z]/g, ""));
+console.log(letters.size === 26);
+
+// todo Check if a string is an anagram and panagram of another.
+let userInput=['The quick brown fox jumps over the lazy dog']
+let n=userInput[0].split(" ")
+console.log(n.length)
+
+// todo Find the first non-repeating character in a string.
+let userInput=['racecars']
+let n=userInput[0].split("")
+console.log(n)
+let letter={}
+
+for (let char of n){
+    if (letter[char]){
+    letter[char]+=1
+    }else{
+        letter[char]=1
+       
+    }
+   
+}
+let result=[]
+for (let key in letter){
+    // console.log(`${key}->${letter[key]}`)
+    if(letter[key]==1){
+        result.push(`${key}->${letter[key]}`)
+    }
+}
+console.log(result[0])
+
+// todo Remove all vowels from a string.
+let userInput=['racecars']
+let n=userInput[0].split("")
+console.log(n)
+let vowels = ['a', 'e', 'i', 'o', 'u'];
+for (let char of n) {
+    if(!vowels.includes(char) ){
+        console.log(char)
+    }
+}
+
+// todo Find the shortest word in a sentence.
+let userInput = "todo Find the shortest word in a sentence";
+let n = userInput.split(' '); 
+console.log(n);
+
+let result = n[0]; 
+for (let i = 1; i < n.length; i++) { 
+    if (n[i].length < result.length) { 
+        result = n[i]; 
+    }
+}
+
+console.log(result); 
+
+// todo Count occurrences of a substring within a string.
+function countOccurrences(mainString, subString) {
+    let count = 0;
+    let index = 0;
+
+    while ((index = mainString.indexOf(subString, index)) !== -1) {
+        count++;  // Increase count when found
+        index++;  // Move index forward to check for overlapping cases
+    }
+
+    return count;
+}
+
+// Example cases
+console.log(countOccurrences("hello world, hello again", "hello")); 
+// console.log(countOccurrences("abcdefg", "xyz")); 
+// console.log(countOccurrences("aaaa", "aa")); 
+
+
+
+
+
+

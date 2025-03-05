@@ -90,3 +90,40 @@ if (gcd(n[0],n[1])===1){
     console.log(false)
 }
 
+// todo Print a diamond pattern of stars.
+let n=5
+for(let i=1;i<=n;i++){
+    let space=" ".repeat(n-i)
+    let star=" *".repeat(i)
+    console.log(space+star)
+}
+for(let i=n;i>=1;i--){
+     let space1=" ".repeat(n-i)
+    let star1=" *".repeat(i)
+    console.log(space1+star1)
+}
+
+// todo Print Pascal’s triangle up to N rows.
+let n=5
+function generatePascalsTriangle(n) {
+    let triangle = []; // Step 1: Create an empty array
+
+    for (let i = 0; i < n; i++) {
+        triangle[i] = []; // Step 2: Create a new row
+        triangle[i][0] = triangle[i][i] = 1; // Step 3: First and last element are 1
+
+        for (let j = 1; j < i; j++) { // Step 4: Compute middle elements
+            triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+        }
+    }
+
+    for (let i = 0; i < n; i++) {
+        let spaces = " ".repeat(n - i); // Step 5: Formatting
+        console.log(spaces + triangle[i].join(" "));
+    }
+}
+
+// Call function with N = 5
+generatePascalsTriangle(5);
+
+
