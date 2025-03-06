@@ -1,0 +1,104 @@
+// todo Find the number of occurrences of an element in an array.
+let userInput=['1 2 3 4 5 6 2 7  2 8 2 2 2 2','2'];
+let n=userInput[0].split(' ').map(Number);
+let m=userInput[1].split('').map(Number);
+// console.log(m);
+let result=0
+for (let i=1;i<n.length;i++){
+    if(n[i]==m){
+      result++  
+    }
+}
+console.log(result)
+
+// todo Merge two sorted arrays.
+let arr1 = [1, 2, 5] 
+let arr2 = [2, 4, 6]  
+
+let result=[]
+for(let i=0;i<arr1.length;i++){
+    result.push(arr1[i])
+}
+for(let i=0;i<arr2.length;i++){
+    result.push(arr2[i])
+}
+console.log(result.sort())
+
+// todo Reverse the elements in an array.
+let arr = [1, 2, 3, 4, 5];
+let result=[]
+for (let i=arr.length-1;i>=0;i--){
+    result.push(arr[i])
+}
+console.log(result)
+
+// todo Search for an element in a sorted array.
+function searchSortedArray(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === target) {
+            return mid; // Target found, return index
+        } else if (arr[mid] < target) {
+            left = mid + 1; // Search in the right half
+        } else {
+            right = mid - 1; // Search in the left half
+        }
+    }
+
+    return -1; // Target not found
+}
+
+// Example usage:
+console.log(searchSortedArray([-5, -2, 0, 3, 7, 10], 3));  // Output: 3
+console.log(searchSortedArray([1, 3, 5, 7, 9], 6));        // Output: -1
+console.log(searchSortedArray([], 5));                     // Output: -1
+console.log(searchSortedArray([2, 4, 6, 8, 10, 12, 14], 14)); // Output: 6
+
+// todo Find the cumulative sum of an array.
+function cumulativeSum(arr) {
+    let result = [];
+    let sum = 0;
+
+    for (let num of arr) {
+        sum += num;
+        result.push(sum);
+    }
+
+    return result;
+}
+
+// Example usage:
+console.log(cumulativeSum([1, 2, 3, 4, 5]));  // Output: [1, 3, 6, 10, 15]
+console.log(cumulativeSum([-1, -2, -3, -4])); // Output: [-1, -3, -6, -10]
+console.log(cumulativeSum([3, -2, 5, -1, 4])); // Output: [3, 1, 6, 5, 9]
+console.log(cumulativeSum([]));               // Output: []
+
+// todo Calculate the product of all elements in an array.
+function productOfArray(arr) {
+    if (arr.length === 0) return 1; // Return 1 for an empty array (neutral element for multiplication)
+
+    let product = 1;
+    for (let num of arr) {
+        product *= num;
+    }
+    return product;
+}
+
+// Example usage:
+console.log(productOfArray([1, 2, 3, 4, 5]));   // Output: 120
+
+
+// todo Find the intersection of two arrays.
+function intersection(arr1, arr2) {
+    let set1 = new Set(arr1);
+    let set2 = new Set(arr2);
+    return [...set1].filter(num => set2.has(num));
+}
+
+// Example usage:
+console.log(intersection([1, 2, 3, 4], [3, 4, 5, 6])); // Output: [3, 4]
+console.log(intersection([7, 8, 9], [10, 11, 12]));    // Output: []
