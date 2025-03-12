@@ -1,0 +1,70 @@
+//sample binary search
+function binarySearch(arr,target){
+    let left=0
+    let right=arr.length-1
+while(left<=right){
+    let mid=Math.floor((left+right)/2)
+    
+    if(arr[mid]==target){
+        return mid;
+    }else if(arr[mid]<target){
+        left=mid+1
+    }else if(arr[mid]>target){
+        left =mid-1
+    }
+}
+return -1
+}
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 8));
+
+// todo Find the floor and ceiling of a target in a sorted array.
+function findFloorCeiling(arr, target) {
+    let low = 0, high = arr.length - 1;
+    let floor = -1, ceiling = -1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (arr[mid] === target) {
+            return { floor: arr[mid], ceiling: arr[mid] };
+        } else if (arr[mid] < target) {
+            floor = arr[mid]; // Update floor
+            low = mid + 1;
+        } else {
+            ceiling = arr[mid]; // Update ceiling
+            high = mid - 1;
+        }
+    }
+
+    return { floor, ceiling };
+}
+
+// Example Usage
+let arr = [1, 2, 8, 10, 10, 12, 19];
+let target = 5;
+console.log(findFloorCeiling(arr, target)); 
+
+// todo Find the smallest missing element in a sorted array.
+function findSmallestMissing(arr) {
+    let low = 0, high = arr.length - 1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (arr[mid] !== mid) {
+            // Check if it's the first missing element
+            if (mid === 0 || arr[mid - 1] === mid - 1) {
+                return mid;
+            }
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    return arr.length; // If no missing element, return the next expected number
+}
+
+// Example Usage
+let arr = [0, 1, 2, 6, 7, 8];
+console.log(findSmallestMissing(arr)); // Output: 3
